@@ -20,7 +20,13 @@
 				  <div class="card-body">
 					<h4 class="card-title"><?=$item['item']->name?></h4>
 					<p class="card-text"><?=$item['item']->description?></p>
+					<?php 
+						if($item['item']->imageurl){
+					?>
 					<p><img style="max-width:300px;max-height:100px;" src="<?=ROOT_DIR?>/public/img/<?=$item['item']->imageurl?>" /></p>
+					<?php
+						}
+					?>
 					<ul class="list-group">
 					<?php
 						foreach($item['materials'] as $material){
