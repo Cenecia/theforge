@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2017 at 12:12 AM
+-- Generation Time: Feb 11, 2018 at 04:47 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -59,7 +59,22 @@ INSERT INTO `item` (`id`, `name`, `description`, `imageurl`) VALUES
 (17, 'Shards of Knowledge', 'This allows a student to gain access to 1/6th of a cheat sheet.', 'shardsofknowledge.jpg'),
 (18, 'Pick Pocket', 'Using this card, and with a lucky roll of the dice a player can steal one card of their choice from another player', 'pickpocket.jpg'),
 (19, 'Rename Card', 'Using this card, a player can anonymously change the name of any player or guild in Anteria.  This is done in total anonymity and whoever casts it shall not be revealed.', 'renamecard.jpg'),
-(20, 'Vault Key', 'User can use this key to secretly resubmit a quest for re-evaluation.  A group of keys (at least 3) can gain access to something more!', 'vaultkey.jpg');
+(20, 'Vault Key', 'User can use this key to secretly resubmit a quest for re-evaluation.  A group of keys (at least 3) can gain access to something more!', 'vaultkey.jpg'),
+(21, 'Cooked Meat', 'Food Item.  Cooked.  Heals 20 hp on consumption.', 'cookedmeat.png'),
+(22, '250 Boss Battle Points', 'This item allows the user access to a moderate amount of points before the battle even begins to give their team an advantage!', ''),
+(23, '1000 Boss Battle Points', 'This item allows the user access to a large amount of points before the battle even begins to give their team an advantage!', ''),
+(24, 'Parry', 'This item allows the user to deflect an iron spear attack back to the attacker causing them to miss 2 turns (...you might want to keep this card a secret!)', 'parry.png'),
+(25, 'Deep Pockets', 'This item allows the user to access their expanded inventory space.', 'deeppockets.png'),
+(26, 'Shield of Swifty', 'This item allows the user to block an enemy spear rendering it useless.  It\'s actually just a giant sword…. Impossible to lift.', 'shieldofswifty.png'),
+(27, 'Iron Sword', 'This item allows a student to borrow a sword from the GM.  With it you can roll for damage using a d12 in either boss or pvp battles.', 'ironsword.png'),
+(28, 'Double XP', 'Using this item on a regular daily battle will allow the user double xp point value.   It cannot be used on major battles or pvp.', 'doublexp.png'),
+(29, 'Cleanse', 'Should a fellow team be too far ahead in the leaderboards you can use this card to eliminate 500XP in the blink of an eye.  Be careful, using this card may come back to haunt you.', 'cleanse.png'),
+(30, 'Ninja', 'Using this card will allow you to nab 250 XP from an opposing player and add it to your XP stash.', 'ninja.png'),
+(31, 'Firefly', 'Are you falling behind in XP?  Use this card to ward all XP gained by an enemy guild for the day.', 'firefly.png'),
+(32, 'Smoke Screen', 'Using this advanced form of decoy will allow the user to bypass AND get full rewards for a small quest.', 'smokescreen.png'),
+(33, 'Card of Corpus Juris', 'Using this card allows you to “lawyer up” and take back your original name if you are a victim of the rename card.', 'cardofcorpusjuris.png'),
+(34, 'Strategy Time', 'With this card a user can confer with a fellow guild member of their choosing for 1 minute.  \r\nThis card may only be used with GM approval.', 'strategytime.png'),
+(35, 'Iron Dagger', 'This item allows a student to borrow a dagger from the GM.  With it you can roll for damage using a d8 in either boss or pvp battles.', 'irondagger.png');
 
 -- --------------------------------------------------------
 
@@ -153,7 +168,48 @@ INSERT INTO `item_material` (`id`, `materialID`, `itemID`, `quantity`) VALUES
 (72, 17, 20, 2),
 (73, 10, 20, 2),
 (74, 15, 20, 2),
-(75, 6, 20, 2);
+(75, 6, 20, 2),
+(76, 15, 21, 1),
+(77, 23, 21, 1),
+(78, 15, 22, 1),
+(79, 24, 22, 1),
+(80, 15, 23, 1),
+(81, 24, 23, 2),
+(82, 25, 23, 1),
+(83, 6, 24, 1),
+(84, 24, 24, 1),
+(85, 6, 25, 2),
+(86, 11, 25, 1),
+(87, 4, 26, 1),
+(88, 6, 26, 1),
+(89, 10, 27, 1),
+(90, 15, 27, 1),
+(91, 6, 27, 2),
+(92, 24, 28, 1),
+(93, 25, 28, 1),
+(94, 1, 28, 1),
+(95, 24, 29, 1),
+(96, 25, 29, 1),
+(97, 1, 29, 1),
+(98, 15, 29, 2),
+(99, 24, 30, 1),
+(100, 2, 30, 2),
+(101, 1, 30, 2),
+(102, 24, 31, 3),
+(103, 3, 31, 1),
+(104, 14, 31, 1),
+(105, 24, 32, 1),
+(106, 1, 32, 2),
+(107, 15, 32, 2),
+(108, 25, 33, 2),
+(109, 1, 33, 1),
+(110, 15, 33, 2),
+(111, 24, 34, 1),
+(112, 25, 34, 2),
+(113, 14, 34, 1),
+(114, 10, 35, 1),
+(115, 15, 35, 1),
+(116, 6, 35, 1);
 
 -- --------------------------------------------------------
 
@@ -194,7 +250,11 @@ INSERT INTO `material` (`id`, `name`, `tierID`, `description`, `imageurl`) VALUE
 (18, 'Rainbow Shell', 4, 'Material of legends, said to be 100 times as flexible as gold and 10 times stronger than iron, but 1/10th of the weight.', 'rainbowshell.jpg'),
 (19, 'Rusted Sword', 4, 'Old rusted sword. Perhaps it was once useful, but time has removed all evidence of that.', 'rustedsword.png'),
 (20, 'Time Worn Staff', 4, 'Old staff. Perhaps it was once used by a master of the arcane arts, but time has removed all evidence of that.', 'timewornstaff.png'),
-(21, 'Weathered Bow', 4, 'Old moldy bow. Echos of the forest resonate from the bow, suggesting it was once quite powerful.', 'weatheredbow.jpg');
+(21, 'Weathered Bow', 4, 'Old moldy bow. Echos of the forest resonate from the bow, suggesting it was once quite powerful.', 'weatheredbow.jpg'),
+(22, 'Wheel of Cheese', 1, 'Food Item.  May eat as many as you want, but let\'s', 'wheelofcheese.png'),
+(23, 'Raw Meat', 1, 'Food Item. Uncooked.', 'rawmeat.png'),
+(24, 'Dragonling Eye', 2, 'Taken from the eyes of young smaller dragons.', 'dragonlingeye.png'),
+(25, 'Glow Stone', 2, 'A unique stone that is used as a catalyst in many ', 'glowstone.png');
 
 -- --------------------------------------------------------
 
@@ -258,17 +318,17 @@ ALTER TABLE `tier`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `item_material`
 --
 ALTER TABLE `item_material`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 --
 -- AUTO_INCREMENT for table `material`
 --
 ALTER TABLE `material`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `tier`
 --
